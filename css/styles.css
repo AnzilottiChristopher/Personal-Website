@@ -1,0 +1,73 @@
+/* ***Containers*** */
+.background {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+
+}
+.topbar {
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-template-rows: 1fr;
+
+    box-sizing: border-box;
+}
+.headshot {
+    border-radius: 50%;
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    margin-left: 70px;
+    margin-top: 40px;
+
+}
+.textContainer {
+    display: grid;
+    grid-template-rows: 25% 25% auto;
+    grid-template-columns: 100%;
+
+    min-height: 30vh;
+
+    margin-left: 110px;
+    margin-top: 80px;
+
+    justify-content: space-between;
+}
+.textContainer2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-left: 110px;
+    margin-top: 80px;
+
+}
+.imageContainer {
+    display: flex;
+    justify-content: flex-start;
+}
+.githubLogo {
+    height: 50px;
+    width: 50px;
+}
+.linkedInLogo {
+    height: 50px;
+    width: 60px;
+    gap: 10px;
+}
+
+/* ***Text*** */
+.ChrisName {
+    color: midnightblue;
+    font-weight: bold;
+    font-size: 40px;
+
+    grid-column: 1;
+    grid-row: 1;
+}
+.degree{
+    grid-column: 1;
+    grid-row: 2;
+
+    margin-left: 3px;
+}
