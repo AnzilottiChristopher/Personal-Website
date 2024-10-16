@@ -3,6 +3,15 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr 2fr; /* Added room for the navigation menu */
+    height: 100vh; /* Adjust to fit your full page */
+    background: linear-gradient(270deg, #d3d3d3, #e0e0e0, #f5f5f5, #ffffff); /* Lighter shades of gray */
+    background-size: 400% 400%; /* Larger size for a smooth transition */
+    animation: gradientAnimation 30s ease infinite; /* Adjust the speed (15s) */
+}
+
+.java-page {
+    background: none; /* Removes the gradient */
+    background-color: white; /* Set a plain background or any color you prefer */
 }
 
 .topbar {
@@ -113,6 +122,7 @@
  /* ***Navigation Bar*** */
  .navigation-wrapper {
      position: sticky; /* Makes the navigation sticky */
+     width: 70px;
      top: 0; /* Sticks to the top when scrolling */
      z-index: 1000; /* Ensures it stays on top of other elements */
      background-color: #fff; /* Optional: give it a background so it doesn't overlap other content */
@@ -329,8 +339,121 @@
      }
  }
 
+ /*animated background*/
+ @keyframes gradientAnimation {
+     0% {
+         background-position: 0% 50%;
+     }
+     50% {
+         background-position: 100% 50%;
+     }
+     100% {
+         background-position: 0% 50%;
+     }
+ }
 
- /* Mulish fonts */
+
+ /*Timeline*/
+ /* General Styles */
+ body {
+     font-family: Arial, sans-serif;
+     background-color: #f4f4f9;
+     color: #333;
+     margin: 0;
+     padding: 0;
+ }
+
+ h2 {
+     text-align: center;
+     color: #444;
+     margin-top: 20px;
+ }
+
+ p {
+     text-align: center;
+     color: #666;
+ }
+
+ /* Timeline Styles */
+ .timeline {
+     position: relative;
+     max-width: 800px;
+     margin: 40px auto;
+ }
+
+ .timeline::before {
+     content: '';
+     position: absolute;
+     width: 6px;
+     background-color: #6c757d;
+     top: 0;
+     bottom: 0;
+     left: 50%;
+     margin-left: -3px;
+ }
+
+ .timeline-item {
+     padding: 20px 30px;
+     position: relative;
+     width: 50%;
+     border-radius: 6px;
+     background-color: #fff;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     margin: 20px 0;
+ }
+
+ .timeline-item:nth-child(odd) {
+     left: -80px;
+ }
+
+ .timeline-item:nth-child(even) {
+     left: 53%;
+ }
+
+ .timeline-item::before {
+     content: '';
+     position: absolute;
+     width: 20px;
+     height: 20px;
+     border-radius: 50%;
+     background-color: #6c757d;
+     top: 30px;
+     left: -10px;
+ }
+
+ .timeline-item:nth-child(even)::before {
+     left: calc(100% - 10px);
+ }
+
+ .timeline-content {
+     padding: 10px;
+     border-radius: 6px;
+     background-color: #fff;
+     position: relative;
+     z-index: 1;
+     text-decoration: none;
+ }
+
+ .timeline-content h3 {
+     margin-top: 0;
+     color: #333;
+ }
+
+ .timeline-content p {
+     margin: 0;
+     color: #555;
+ }
+
+ .timeline-content a {
+     display: block; /* Change to block to make the link take up the full width */
+     width: 100%; /* Set width to 100% to occupy the full width of its container */
+     padding: 10px; /* Optional: Add padding for a larger clickable area */
+     text-decoration: none; /* Removes the underline */
+     color: inherit; /* Keeps the text color the same as surrounding text */
+     box-sizing: border-box; /* Ensures padding is included in the element's total width */
+ }
+
+ /* fonts */
 
  .mulish {
      font-family: "Mulish", sans-serif;
