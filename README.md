@@ -1,1 +1,1 @@
-This website is currently ongoing.
+This website is currently unfinished and ongoing.
