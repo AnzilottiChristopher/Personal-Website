@@ -1,0 +1,880 @@
+/* ***Containers*** */
+.background {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr 2fr; /* Added room for the navigation menu */
+    height: 100vh; /* Adjust to fit your full page */
+    background: linear-gradient(270deg, #d3d3d3, #e0e0e0, #f5f5f5, #ffffff); /* Lighter shades of gray */
+    background-size: 400% 400%; /* Larger size for a smooth transition */
+    animation: gradientAnimation 30s ease infinite; /* Adjust the speed (15s) */
+    overflow-x: hidden; /* Hide any horizontal overflow */
+}
+
+.java-page {
+    background: none; /* Removes the gradient */
+    background-color: white; /* Set a plain background or any color you prefer */
+}
+
+.topbar {
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-template-rows: 1fr;
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for 3D effect */
+    border-radius: 10px; /* Rounded corners for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: translateY(-20px);
+}
+
+/*.topbar:hover {
+    transform: translateY(-10px); /* Slightly lift on hover 
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover 
+} */
+
+.headshot {
+    border-radius: 50%;
+    width: 85%;
+    height: 85%;
+    object-fit: cover;
+    margin-left: 70px;
+    margin-top: 23px;
+}
+
+.textContainer {
+    display: grid;
+    grid-template-rows: 25% 25% auto;
+    grid-template-columns: 100%;
+    min-height: 30vh;
+    margin-left: 110px;
+    margin-top: 80px;
+    justify-content: space-between;
+}
+
+.textContainer2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 110px;
+    margin-top: 80px;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: flex-start;
+    height: 50%;
+}
+
+.githubLogo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.githubLogo:hover {
+    transform: translateY(-10px); /* Slightly lift on hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+} 
+
+.linkedInLogo {
+    height: 50px;
+    width: 50px;
+    gap: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0; /* Removes any margin */
+    padding: 0; /* Removes any padding */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.linkedInLogo:hover {
+    transform: translateY(-10px); /* Slightly lift on hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+} 
+
+
+.HandShakeLogo {
+    height: 50px;
+    width: 50px;
+    gap: 10px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.HandShakeLogo:hover{
+    transform: translateY(-10px); /* Slightly lift on hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    border-radius: 15px;
+}
+
+/* ***Text*** */
+.ChrisName {
+    color: midnightblue;
+    /*font-family: "Mulish";*/    
+    font-weight: bold;
+    font-size: 40px;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.degree {
+    grid-column: 1;
+    grid-row: 2;
+    margin-left: 3px;
+}
+
+/* ***Navigation Bar*** */
+.navigation-wrapper {
+    position: fixed; /* Makes the navigation sticky */
+    width: 70px;
+    top: 10; /* Sticks to the top when scrolling */
+    z-index: 200; /* Ensures it stays on top of other elements */
+    background-color: #fff; /* Optional: give it a background so it doesn't overlap other content */
+    padding: 10px 0; /* Adjust padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for a floating effect */
+    margin: 0; /* Remove margin to make it flush with the screen */
+    border-radius: 10px;
+    right: 30;
+    display: block; /* Always visible on larger screens */
+}
+
+
+#menu-toggle {
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.site-nav {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 100%; /* Position it directly below the menu toggle */
+    left: 0;
+    background-color: #333;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    z-index: 200; /* Ensures it stays on top of other content */
+}
+
+.site-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-nav ul li {
+    display: block;
+}
+
+.site-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+.site-nav ul li a:hover {
+    background-color: #444;
+}
+
+/* Show the dropdown when hovering over the menu toggle or the site-nav */
+#menu-toggle:hover + .site-nav,
+.site-nav:hover {
+    display: block; /* Show the dropdown when hovering over the toggle or the dropdown itself */
+}
+
+/* Optional: Add a smooth drop-down animation */
+.site-nav.animated {
+    transition: all 0.3s ease;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none; /* Hidden by default */
+    position: sticky;
+    top: 10px;
+    left: 10px; /* Move it from the left side */
+    font-size: 24px; /* Set the size of the hamburger icon */
+    cursor: pointer;
+    z-index: 200; /* Ensure it stays on top */
+}
+
+
+/* Hidden Nav */
+/* Initially hide the new nav menu */
+#hidden-nav {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 10%; /* Position it below the hamburger */
+    left: 0.5%;
+    background-color: #333;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    z-index: 200; /* Ensure it stays on top */
+}
+
+/* #hidden-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#hidden-nav ul li {
+    display: block;
+} */
+
+/* #hidden-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+} */
+
+#hidden-nav ul li a:hover {
+    background-color: #444;
+}
+
+
+
+
+/* ***Responsive Styles*** */
+@media (max-width: 768px) { /* For tablets and smaller devices */
+    .topbar {
+        grid-template-columns: 1fr; /* Stack elements vertically */
+        margin: 0; /* Remove margin to fit better */
+    }
+    .headshot {
+        width: 40%; /* Adjust size of headshot */
+        height: auto; /* Maintain aspect ratio */
+        margin-left: auto; /* Center horizontally */
+        margin-right: auto; /* Center horizontally */        
+    }
+    .section1, .section2{
+        margin-left: 40px;
+    }
+    .textContainer {
+        margin-left: 20px; /* Reduce margin */
+        margin-top: 40px; /* Reduce margin */
+    }
+
+    .textContainer2 {
+        margin-left: 20px; /* Reduce margin */
+        margin-top: 40px; /* Reduce margin */
+    }
+
+    .imageContainer {
+        justify-content: center; /* Center icons */
+        margin-top: 20px; /* Add some margin at the top */
+    }
+
+    .githubLogo,
+    .linkedInLogo,
+    .HandShakeLogo {
+        height: 40px; /* Adjust icon size */
+        width: 40px; /* Adjust icon size */
+    }
+
+    .ChrisName {
+        font-size: 30px; /* Adjust font size for smaller screens */
+    }
+
+    .degree {
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+    /* Ensure the pdf-viewer container is responsive */
+    .pdf-viewer {
+        background-color: white;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for 3D effect */
+        border-radius: 10px; /* Rounded corners for depth */
+        padding: 20px;
+        width: 90%; /* Allow it to shrink to 90% of the container */
+        max-width: 90%; /* Ensure it doesn't exceed 90% */
+        margin: 0 auto; /* Center the PDF viewer */
+        box-sizing: border-box; /* Include padding and border in width calculation */
+        overflow: hidden; /* Prevent overflow */
+        margin-left: 8%; /* Move it a little to the right */
+
+    }
+
+    .pdf-container {
+        display: none;
+    }
+
+    /* Style the resumesection inside the PDF viewer */
+    .resumesection {
+        width: 100%; /* Allow the section to take full width */
+        max-width: 100%; /* Prevent it from growing larger than its container */
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Ensure content within resumesection shrinks properly */
+    .resumesection h2, .resumesection p {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Adjust layout of resumesection for smaller screens */
+    .resumesection .section {
+        margin-bottom: 20px; /* Add space between sections */
+        padding: 10px;
+    }
+    .navigation-wrapper{
+        display: none; /* Hidden by default on small screens */
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 60%; /* Adjust width as needed */
+        height: 100%;
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+    /* Display the hamburger menu on smaller screens */
+    .site-nav {
+        display: none; /* Ensure hidden on small screens */
+        position: fixed; /* Change to fixed so it stays on the screen */
+        top: 0;
+        right: 0;
+        width: 30%; /* Adjust width as needed */
+        height: 40%; /* Full height of the viewport */
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        z-index: 200;
+        transition: transform 0.3s ease; /* Smooth transition when opening */
+        transform: translateX(100%); /* Initially off-screen to the right */
+    }
+    
+    .site-nav.active {
+        display: block; /* Show dropdown when active */
+        transform: translateX(0); /* Move into view */
+    }
+    
+    #hidden-nav.active {
+        display: block; /* Show the nav */
+        position: fixed; /* Keep it fixed on the screen */
+        top: 70;
+        right: 0;
+        width: 25%; /* Adjust width as needed */
+        height: 15%; /* Full height of the viewport */
+        background-color: #333;
+        z-index: 200;
+        transform: translateX(0); /* Ensure it moves into view */
+    }
+    
+    /* For the hamburger menu */
+    .hamburger-menu {
+        display: block;
+        color: white;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 5px;
+        width: auto; /* Let the width adjust to the content */
+        height: auto; /* Let the height adjust to the content */
+        top: 2%;
+        left: 10px;
+        position: fixed; /* Keep it fixed on the screen */
+        z-index: 250;
+    }
+    
+    #menu-toggle {
+        font-size: 16px; /* Adjust menu font size */
+        padding: 8px 14px; /* Adjust padding */
+    }
+    .timeline {
+        margin: 20px auto; /* Reduce margin */
+        padding: 0 20px; /* Add padding for better spacing on smaller screens */
+    }
+
+    .timeline-item {
+        width: 100%; /* Make the timeline items full width */
+        left: 0; /* Remove any left positioning */
+        margin-left: 0; /* Remove margin */
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0; /* Align with the other items */
+    }
+
+    .timeline::before {
+        left: 20px; /* Position the timeline line a bit to the left */
+    }
+
+    .timeline-item::before {
+        left: -30px; /* Position the marker correctly relative to the new layout */
+    }
+}
+
+@media (max-width: 480px) { /* For mobile devices */
+    .topbar {
+        grid-template-columns: 1fr; /* Stack elements vertically */
+    }
+
+    .textContainer {
+        margin-left: 10px; /* Reduce margin */
+        margin-top: 20px; /* Reduce margin */
+    }
+
+    .ChrisName {
+        font-size: 24px; /* Further adjust font size */
+    }
+
+    .degree {
+        font-size: 16px; /* Further adjust font size */
+    }
+
+    .site-nav {
+        display: none; /* Ensure hidden on small screens */
+    }
+
+    .site-nav.active {
+        display: block; /* Show dropdown when active */
+    }
+    #hidden-nav.active {
+        display: block; /* Show the nav */
+    }
+    .githubLogo,
+    .linkedInLogo {
+        height: 35px; /* Further adjust icon size */
+        width: 35px; /* Further adjust icon size */
+    }
+    .navigation-wrapper{
+        top: 10;
+        left: 10;
+    }
+    #menu-toggle {
+        font-size: 14px; /* Further adjust menu font size */
+        padding: 6px 12px; /* Further adjust padding */
+    }
+    .timeline {
+        margin: 10px auto; /* Further reduce margin */
+        padding: 0 10px; /* Add padding for better spacing on smaller screens */
+    }
+
+    .timeline-item {
+        width: 100%; /* Make timeline items full width */
+        left: 0; /* Remove any left positioning */
+        margin-left: 0;
+    }
+
+    .timeline-item::before {
+        left: -15px; /* Adjust marker to fit with the new alignment */
+    }
+
+    .timeline::before {
+        left: 15px; /* Adjust the vertical line to fit within the new layout */
+    }
+}
+
+/* ***Grid Layout Section Added*** */
+.container {
+    width: 100%;
+    margin: 20px;
+    transform: translate(10px);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    grid-gap: 10px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+header {
+    grid-column: 1 / span 4;
+    background-color: #f4a261;
+    padding: 20px;
+    text-align: center;
+}
+
+.section1 {
+    grid-column: 1 / span 2;
+    background-color: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for 3D effect */
+    border-radius: 10px; /* Rounded corners for depth */    padding: 20px;
+    
+}
+
+.section2 {
+    grid-column: 3 / span 2;
+    background-color: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for 3D effect */
+    border-radius: 10px; /* Rounded corners for depth */    padding: 20px;
+}
+
+.box {
+    background-color: #264653;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    grid-column: 1 / span 4;
+    background-color: #2a9d8f;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Make pdf-viewer section span across both columns */
+.pdf-viewer {
+    grid-column: 2 / span 2; /* Spans across two columns */
+    background-color: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for 3D effect */
+    border-radius: 10px; /* Rounded corners for depth */    padding: 20px;
+}
+
+/* Centering the PDF viewer and making it larger */
+.pdf-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Adjust width as needed */
+    margin: 0 auto;
+    padding: 20px 0;
+    
+}
+.pdf-viewer a {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.pdf-container iframe {
+    border: none;
+    width: 100%;
+    height: 80vh;
+}
+.resumeSection{
+    display: flex;
+    gap: 10px; /* Adds space between the two h3 elements */
+    align-items: center; /* Aligns items vertically if needed */
+    justify-content: space-between; /* Distributes items with space between */
+    width: 100%;
+}
+
+/* Responsive Design for the grid */
+@media (max-width: 800px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .container{
+        margin: 0;
+    }
+    .section1, .section2 {
+        grid-column: 1 / span 2;
+        /* transform: translateX(-30px); */
+
+    }
+     .pdf-container iframe {
+        display: none; /* Hide the iframe */
+    }
+
+    .pdf-viewer {
+        grid-column: span 2; /* Make the pdf-viewer span both columns */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the content */
+        padding: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .pdf-viewer a {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .pdf-viewer a:hover {
+        background-color: #0056b3;
+    }
+    .site-nav {
+        display: none; /* Ensure hidden on small screens */
+    }
+
+    .site-nav.active {
+        display: block; /* Show dropdown when active */
+    }
+    #hidden-nav.active {
+        display: block; /* Show the nav */
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        transform: translateX(-30px);
+    }
+
+    .section1, .section2 {
+        grid-column: 1 / span 1;
+    }
+
+    header, footer {
+        grid-column: 1 / span 1;
+    }
+    .site-nav {
+        display: none; /* Ensure hidden on small screens */
+    }
+
+    .site-nav.active {
+        display: block; /* Show dropdown when active */
+    }
+    #hidden-nav.active {
+        display: block; /* Show the nav */
+    }
+}
+
+/*animated background*/
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/*Timeline*/
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    color: #444;
+    margin-top: 20px;
+}
+
+p {
+    text-align: center;
+    color: #666;
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #6c757d;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.timeline-item {
+    padding: 20px 30px;
+    position: relative;
+    width: 50%;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.timeline-item:nth-child(odd) {
+    left: -80px;
+}
+
+.timeline-item:nth-child(even) {
+    left: 53%;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #6c757d;
+    top: 30px;
+    left: -10px;
+}
+.timeline-item:hover{
+    animation: pulse 1.5s infinite;
+    cursor: pointer; 
+}
+
+.timeline-item:nth-child(even)::before {
+    left: calc(100% - 10px);
+}
+
+.timeline-content {
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+    text-decoration: none; 
+    animation: none;
+}
+
+/* .timeline-content:hover{
+    animation: pulse 1.5s infinite;
+    cursor: pointer; 
+} */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03); /* Slightly grow */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.timeline-content p {
+    margin: 0;
+    color: #555;
+}
+
+.timeline-content a {
+    display: block; /* Change to block to make the link take up the full width */
+    width: 100%; /* Set width to 100% to occupy the full width of its container */
+    padding: 10px; /* Optional: Add padding for a larger clickable area */
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Keeps the text color the same as surrounding text */
+    box-sizing: border-box; /* Ensures padding is included in the element's total width */
+}
+
+/* Popup */
+/* Popup container */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Ensure it's above other elements */
+    left: 0;
+    top: 0;
+    
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+.popup-grid {
+    display: grid;
+    grid-template-rows: 75% 20% 5%; /* Top div takes 60% height, bottom div takes 30% */
+    grid-template-columns: 100%; /* Each div takes full width */
+    grid-gap: 0; /* Space between the two columns */
+    height: 100%; /* Take the full height */
+    align-items: center; /* Center the items vertically */
+}
+
+.popup-divs1 {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    height: 70%; /* 60% of the total popup height */
+    width: 70%;
+    overflow: hidden; 
+    margin: 0 auto;
+    position: relative;
+}
+.arrow-btn {
+    position: absolute; /* Position them absolutely within the container */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center adjustment */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border: none; /* Remove border */
+    font-size: 24px; /* Size of the arrows */
+    cursor: pointer; /* Pointer cursor */
+    z-index: 10; /* Ensure arrows are above the image */
+}
+
+#prevImage {
+    left: 10px; /* Adjust left position */
+}
+
+#nextImage {
+    right: 10px; /* Adjust right position */
+}
+.popup-divs1 img {
+    width: 100%; /* Full width of the parent div */
+    height: 100%; /* Full height of the parent div */
+    display: block; /* Remove bottom gap */
+}
+.popup-divs2 {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    height: 60%; /* 60% of the total popup height */
+    overflow: auto; /* Allows scrolling if content overflows */
+    margin-bottom: 13%;
+}
+
+/* Popup content */
+.popup-content {
+    position: relative;
+    background-color: white;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    width: 60%; /* 1/3rd of the page */
+    height: 75%;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Box shadow */
+    text-align: center; /* Center content */
+    transform: translateY(-25%);
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}

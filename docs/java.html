@@ -1,7 +1,7 @@
 <html lang="en">
     <head>
         <title>Chris - Java Projects</title>
-        <link type="text/css" href="css/styles.css" rel="stylesheet"/>
+        <link type="text/css" href="styles.css" rel="stylesheet"/>
     </head>
 
 <body class="background java-page">
@@ -11,10 +11,9 @@
         <a href="#menu-toggle" id="menu-toggle">Menu</a>
         <nav id="primary-nav" class="site-nav">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="home.html">Home</a></li> <!-- Home link points to home.html -->
                 <li><a href="unity.html">Unity</a></li>
                 <li><a href="writings.html">Writings</a></li>
-                <li><a href="/about/">Resume</a></li>
             </ul>
         </nav>
     </div>
@@ -22,41 +21,72 @@
     <!-- Page Content for Java Projects -->
     <h2>Java Projects</h2>
     <p>Here are some of my highlighted Java projects that showcase my skills and creativity...</p>
-
+    
     <!-- Timeline Section -->
     <div class="timeline">
-        <a href="https://github.com/AnzilottiChristopher/SER_CardProject" target="_blank" class="timeline-content">
-            <div class="timeline-item">
-                <h3>Egyptian War (April 2023)</h3>
-                <p>A terminal-based card game inspired by the classic Egyptian War. Developed using Java Swing, this engaging game combines strategy and excitement in a unique gaming experience.</p>
-            </div>
-        </a>
+        <div class="timeline-item" id="openPopup">
+            <!-- <a href="https://github.com/AnzilottiChristopher/SER_CardProject" target="_github" class="timeline-content"> -->
+                <div class="timeline-content" data-image = "Img/EgyptianRatScrew.png" github-image = "img/gitHubLogo.gif" github-Link = "https://github.com/AnzilottiChristopher/SER_CardProject"
+                data-text="During my freshman year of college, a partner and I chose to recreate the card game Egyptian Rat Screw in the terminal. We implemented Java Swing to capture real-time user input, as the game is reaction-based and demands quick responses. Java was used for the backend logic, handling the game's events and mechanics">
+                    <h3>Egyptian War (April 2023)</h3>
+                    <p>A terminal-based card game inspired by the classic Egyptian War. Developed using Java Swing, this engaging game combines strategy and excitement in a unique gaming experience.</p>
+                    <!-- <span class="icon">➕</span> Add an icon -->
+                </div>
+            <!-- </a> -->
+        </div>
         <div class="timeline-item">
-            <a href="https://github.com/AnzilottiChristopher/SER225_Plasma" target="_blank" class="timeline-content">
-                <div class="timeline-content">
+            <!-- <a href="https://github.com/AnzilottiChristopher/SER225_Plasma" target="_github" class="timeline-content"> -->
+                <div class="timeline-content" data-image="Img/GameLoadScreen.png" github-image = "img/gitHubLogo.gif" github-Link = "https://github.com/AnzilottiChristopher/SER225_Plasma"
+                data-text="In this semester-long project, I worked in a team using Scrum and Agile methodologies. I contributed by integrating music into the game, developing the entire storyline, coding barriers, and creating cutscenes for key in-game events.">
                     <h3>RPG Game (November 2023)</h3>
                     <p>Refactored the code of a starter RPG game to develop our own unique version, featuring a turn-based battle system and a variety of music.</p>
                 </div>
-            </a>
+            <!-- </a> -->
         </div>
         <!-- Add more timeline items here -->
         <div class="timeline-item">
-            <div class="timeline-content">
-                <a href="https://github.com/PaulZ357/Spring2024Hackathon" target="_blank">
+            <div class="timeline-content" data-image = "Img/DisabilityGame.png" github-image = "img/gitHubLogo.gif" github-Link = "https://github.com/PaulZ357/Spring2024Hackathon"
+            data-text="For this event, my team and I designed a cooperative game that utilizes TCP and UDP to create an interactive multiplayer experience. In the game, players choose to play as either a deaf character or a blind character. The blind player navigates without visual cues, relying on audio prompts sent by the deaf player. Meanwhile, the deaf player interacts with a screen featuring three characters that help them communicate key information. For this project, I developed the server and designed the communication system that enables seamless interaction between the two players">
+                <!-- <a href="https://github.com/PaulZ357/Spring2024Hackathon" target="_github" class = "timeline-content"> -->
                     <h3>Quinnipiac Hackathon (Spring 2024)</h3>
                     <p>Inspired by the theme of disability, I collaborated with a team to develop an engaging visual and auditory game using Java Swing, which earned us second place in the competition.</p>
-                </a>
+                <!-- </a> -->
             </div>
         </div>
-
+        
         <div class="timeline-item">
-            <div class="timeline-content">
-                <a href="https://github.com/AnzilottiChristopher/CSC_340_Project2" target="_blank">
+            <div class="timeline-content" data-content = "Hello" data-image="Img/TriviaGame.png" github-image = "img/githubLogo.gif" github-Link = "https://github.com/AnzilottiChristopher/CSC_340_Project2"
+            data-text="This project involved creating a trivia game that supports any number of players, with each player connecting to a server I established using TCP and UDP protocols. I set up the server and designed the communication system, enabling players to receive questions and point updates and to buzz in during gameplay.">
+                <!-- <a href="https://github.com/AnzilottiChristopher/CSC_340_Project2" target="_github" class = "timeline-content"> -->
                     <h3>Trivia Game (April 2024)</h3>
                     <p>Developed an engaging trivia game that leveraged both TCP and UDP protocols, enabling an unlimited number of clients to participate simultaneously.</p>
-                </a>
+                <!-- </a> -->
             </div>
         </div>
     </div>
+
+    <!-- Popup Window -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close">&times;</span>
+          <div class="popup-grid">
+            <div class="popup-divs1">
+                <button id="prevImage" class="arrow-btn">&#10094;</button>
+                <img id="popup-img" src="" alt="Image"/>
+                <button id="nextImage" class="arrow-btn">&#10095;</button>
+            </div>
+            <div id="popup-text">
+              <p></p>
+            </div>
+            <div class = "imageContainer">
+                <a id = "linkGit" href="" target="_github">
+                    <img class="githubLogo" id="githubPopup" src="" alt="">
+                </a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <script src="imagepopup.js"></script>
 </body>
 </html>
