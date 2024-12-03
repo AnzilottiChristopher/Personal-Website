@@ -19,23 +19,82 @@
     </div>
 
     <!-- Page Content for Unity Projects -->
-    <h2>Unity Projects</h2>
-    <p>Here are some of my Unity projects...</p>
-
-    <div class="timeline">
-        <div class="timeline-item">
-            <h3>Flappy Bird (January 2023)</h3>
-            <p>Followed a guide to learn Unity where I created the popular mobile game Flappy Bird</p>
-        </div>
-        <div class="timeline-item">
-            <h3>Metroidvania (March 2023)</h3>
-            <p>Studied a guide to deepen my understanding of Unity, exploring the creation of 2D games and the development of Metroidvania-style experiences.</p>
-        </div>
-        <div class="timeline-item">
-            <h3>Egyptian War (November 2023)</h3>
-            <p>Transformed my earlier Java implementation of this game into Unity, leveraging my expertise in object-oriented programming.</p>  
+    <div class="smallTopbar">
+        <div class="textContainerSmall">
+            <h1 class="ChrisNameSmall">Christopher Anzilotti</h1>
+            <h2 class="minorOnly">Computer Science | Game Design</h2>
         </div>
     </div>
-    
+
+
+    <div class="timeline">
+        <div class="timeline-item" id="openPopup">
+            <!-- <a href="https://github.com/AnzilottiChristopher/SER_CardProject" target="_github" class="timeline-content"> -->
+                <div class="timeline-content" data-image = "Img/FlappyBirdGame.jpg"
+                data-text="I wanted to familiarize myself with the fundamentals of Unity, so I followed a guide to create a Flappy Bird game. Through this process, I gained a solid understanding of scriptable objects and learned how Unity's systems and workflows operate">
+                <h3>Flappy Bird (January 2023)</h3>
+                <p>Followed a guide to learn Unity where I created the popular mobile game Flappy Bird</p>
+                    <!-- <span class="icon">➕</span> Add an icon -->
+                </div>
+            <!-- </a> -->
+        </div>
+        <div class="timeline-item">
+            <!-- <a href="https://github.com/AnzilottiChristopher/SER225_Plasma" target="_github" class="timeline-content"> -->
+                <div class="timeline-content" data-image="Img/MetroidvaniaGame.jpg"
+                data-text="I explored a guide to deepen my understanding of Unity, focusing on character animation and level design for 2D Metroidvania games. This allowed me to gain hands-on experience in crafting dynamic characters and designing intricate, interconnected levels typical of the Metroidvania genre">
+                <h3>Metroidvania (March 2023)</h3>
+                <p>Studied a guide to deepen my understanding of Unity, exploring the creation of 2D games and the development of Metroidvania-style experiences.</p>
+                    <!-- <span class="icon">➕</span> Add an icon -->
+                </div>
+            <!-- </a> -->
+        </div>
+        <!-- Add more timeline items here -->
+        <div class="timeline-item">
+            <div class="timeline-content" data-image = "Img/UEgyptianWarGame.jpg"
+            data-text="I wanted to revisit my freshman-year card game project and decided to recreate it within Unity. By leveraging my improved understanding of both Java and Unity, I was able to bring the game Egyptian Rat Screw to life with enhanced functionality and design.">
+            <h3>Egyptian War (November 2023)</h3>
+            <p>Transformed my earlier Java implementation of this game into Unity, leveraging my expertise in object-oriented programming.</p>  
+                <!-- <span class="icon">➕</span> Add an icon -->
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+    <!-- Popup Window -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close">&times;</span>
+          <div class="popup-grid">
+            <div class="popup-divs1">
+                <button id="prevImage" class="arrow-btn">&#10094;</button>
+                <img id="popup-img" src="" alt="Image"/>
+                <button id="nextImage" class="arrow-btn">&#10095;</button>
+            </div>
+            <div id="popup-text">
+              <p></p>
+            </div>
+            <!-- <div class = "imageContainer">
+                <a id = "linkGit" href="" target="_github">
+                    <img class="githubLogo" id="githubPopup" src="" alt="">
+                </a>
+            </div> -->
+          </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-text">Contact Information:</p>
+            <ul class="footer-links">
+                <li>Email: <a href="mailto:canzilotti@quinnipiac.edu">canzilotti@quinnipiac.edu</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/christopher-anzilotti-668abb294/" target="_blank">Christopher Anzilotti</a></li>
+                <li>GitHub: <a href="https://github.com/AnzilottiChristopher" target="_blank">AnzilottiChristopher</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="unitypopups.js"></script>
 </body>
 </html>
