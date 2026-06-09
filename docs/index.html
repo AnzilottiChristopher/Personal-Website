@@ -1,96 +1,564 @@
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Chris - Home Page</title>
-        <link type="text/css" href="styles.css" rel="stylesheet"/>
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ruge+Boogie&display=swap" rel="stylesheet">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christopher Anzilotti</title>
+  <meta name="description" content="Christopher Anzilotti — Computer Science & Game Design student at Quinnipiac University.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-<body class="background">
-    <!-- Hidden Nav -->
-    <div class="hamburger-menu" id="menu-hamburger" onclick="toggleMenu()">&#9776;</div>
+  <!-- ── Navigation ──────────────────────────────────────────── -->
+  <nav class="nav" id="nav">
+    <a class="nav-logo" href="#hero">CA</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-    <!-- New Navigation Menu (Initially hidden) -->
-    <nav id="hidden-nav" class="site-nav">
-        <ul>
-            <li><a href="java.html">Java</a></li>
-            <li><a href="unity.html">Unity</a></li>
-            <li><a href="writings.html">Writings</a></li>
-        </ul>
-    </nav>
-    
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <ul>
+      <li><a href="#about"    class="mobile-link">About</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#skills"   class="mobile-link">Skills</a></li>
+      <li><a href="#contact"  class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
 
-    <!-- Navigation Wrapper -->
-    <div class="navigation-wrapper" id="navigation">
-        <a href="#" id="menu-toggle">Menu</a>
-        <nav id="primary-nav" class="site-nav">
-            <ul>
-                <li><a href="java.html">Java</a></li>
-                <li><a href="unity.html">Unity</a></li>
-                <li><a href="writings.html">Writings</a></li>
-            </ul>
-        </nav>
+  <!-- ── Hero ────────────────────────────────────────────────── -->
+  <section id="hero" class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow mono">Hi, I'm</p>
+      <h1 class="hero-name">Christopher<br><span class="accent">Anzilotti</span></h1>
+      <p class="hero-sub">
+        Computer Science &amp; Game Design<br>
+        <span class="mono text-muted">@ Quinnipiac University</span>
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="Christopher_Anzilotti.pdf" class="btn btn-outline" target="_blank" rel="noopener">Resume</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/AnzilottiChristopher" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/christopher-anzilotti-668abb294/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+          </svg>
+        </a>
+      </div>
     </div>
-
-    <!-- Rest of your page content -->
-    <div class="topbar">
-        <div>
-            <img class="headshot" src="img/headshot.jpg" alt="Image of Me">
-        </div>
-        <div class="textContainer">
-            <h1 class="ChrisName">Christopher Anzilotti</h1>
-            <h2 class="degree">Computer Science | Game Design</h2>
-            <div class="imageContainer">
-                <a href="https://github.com/AnzilottiChristopher?tab=repositories" target="_Chris">
-                    <img class="githubLogo" src="img/gitHubLogo.gif" alt="GitHub Logo">
-                </a>
-                <a href="https://www.linkedin.com/in/christopher-anzilotti-668abb294/" target="_Chris">
-                    <img class="linkedInLogo" src="img/linkedIn.jfif" alt="LinkedIn Logo">
-                </a>
-                <a href="https://quinnipiac.joinhandshake.com/profiles/48096437" target="_Chris">
-                    <img class="HandShakeLogo" src="img/handshake-logo.png" alt="HandShake Logo">
-                </a>
-            </div>
-        </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span class="mono text-muted">scroll</span>
+      <div class="scroll-line"></div>
     </div>
+  </section>
 
-    <!-- Grid Layout Section Added -->
+  <!-- ── About ────────────────────────────────────────────────── -->
+  <section id="about" class="section reveal">
     <div class="container">
-        <div class="grid-container">
-            <section class="section1">
-                <h2>About Me</h2>
-                <p>
-                    As a dedicated Computer Science student at Quinnipiac University, I have built a solid foundation in programming, algorithms, and software development. Throughout my academic journey, I have gained hands-on experience with version control systems like GitHub, actively contributing to and managing projects to ensure smooth collaboration and efficient development processes.
-                </p>
-                <p>
-                    My time at Quinnipiac has also equipped me with strong communication skills, enabling me to effectively collaborate with team members during sprint planning, milestone sessions, and knowledge-sharing activities.
-                </p>
-            </section>
-    
-            <section class="section2">
-                <h2>My Interests</h2>
-                <p>
-                    Outside of academics, I am actively involved in intramural volleyball, where I enjoy both the physical challenge and the teamwork that comes with the sport. Rock climbing is another favorite hobby of mine, as it helps me stay focused and build endurance. Video games are my go-to for relaxing and staying connected with friends.
-                </p>
-                <p>
-                    Along with my recreational interests, I am passionate about using technology to make a meaningful impact. I enjoy exploring innovative solutions and continually strive to expand my technical skill set. Working in dynamic environments, I focus on improving user experience, and I take pride in collaborating with others to bring projects to life efficiently and effectively.
-                </p>
-            </section>
-            
-            <section class="pdf-viewer">
-                <div class="ResumeSection">        
-                    <h3>My Resume</h3>
-                    <p><a href="AnzilottiResume.pdf" target="_blank" download>Download Resume</a></p>
-                </div>
-                <div class="pdf-container">
-                    <iframe src="AnzilottiResume.pdf#zoom=120" class="pdf-embed"></iframe>
-                </div>
-            </section>
+      <h2 class="section-title"><span class="mono accent">01.</span> About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <!-- Edit the paragraphs below to update the About section -->
+          <p>I'm a Computer Science student at Quinnipiac University, concentrating in Game Design. I'm passionate about building interactive experiences — from multiplayer networking to 2D platformers.</p>
+          <p>I've worked on projects ranging from cooperative accessibility games (2nd place at the QU Hackathon) to TCP/UDP trivia servers and Unity game ports. I love the intersection of software engineering and creative design.</p>
+          <p>Outside of code, you'll find me at the volleyball court, on a climbing wall, or deep in a new video game.</p>
         </div>
+        <div class="about-img-wrap">
+          <img src="img/headshot.jpg" alt="Christopher Anzilotti" class="about-img">
+        </div>
+      </div>
     </div>
-    <script src = "hamburger.js"></script>
+  </section>
 
+  <!-- ── Projects ─────────────────────────────────────────────── -->
+  <section id="projects" class="section reveal">
+    <div class="container">
+      <h2 class="section-title"><span class="mono accent">02.</span> Projects</h2>
+
+      <div class="filter-tabs" role="tablist">
+        <button class="filter-btn active" data-filter="ai"         role="tab" aria-selected="true">AI</button>
+        <button class="filter-btn"        data-filter="games"      role="tab" aria-selected="false">Games</button>
+        <button class="filter-btn"        data-filter="networking" role="tab" aria-selected="false">Networking</button>
+        <button class="filter-btn"        data-filter="tools"      role="tab" aria-selected="false">Tools</button>
+      </div>
+
+      <!--
+        HOW TO ADD A NEW PROJECT:
+        Copy one <article> block below and update these data attributes:
+          data-category  "ai" | "games" | "networking" | "tools"
+          data-title     Name shown in the modal header
+          data-date      Shown in the card and modal
+          data-desc      Longer description shown in the modal
+          data-images    JSON array of image paths (omit attribute if no screenshots yet)
+          data-github    GitHub URL (omit attribute if no public repo)
+        The card thumbnail uses the first image in data-images.
+        For projects without screenshots, omit data-images and the .card-thumb img —
+        a styled placeholder will render automatically.
+      -->
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- ── AI ─────────────────────────────────────────── -->
+
+        <!-- AI_Checker -->
+        <article class="project-card" tabindex="0"
+          data-category="ai"
+          data-title="AI Checker"
+          data-date="2024"
+          data-desc="A FastAPI web application that scrapes GitHub repositories to detect AI-generated code markers. Features smart pagination, multi-token rotation for rate-limit handling, PostgreSQL/Supabase storage with deduplication, a REST API, and a web interface for running scrapers and viewing results."
+          data-github="https://github.com/AnzilottiChristopher/AI_Checker">
+          <div class="card-thumb placeholder"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="tag tag-python">Python</span>
+              <span class="mono text-muted">2024</span>
+            </div>
+            <h3 class="card-title">AI Checker</h3>
+            <p class="card-desc">FastAPI scraper that detects AI-generated code markers across GitHub repositories.</p>
+          </div>
+        </article>
+
+        <!-- AI-DJ -->
+        <article class="project-card" tabindex="0"
+          data-category="ai"
+          data-title="AI DJ"
+          data-date="2024"
+          data-desc="A production-ready FastAPI backend for an AI-powered DJ system. Uses an LLM via Ollama for intelligent track selection and seamless song transitions. Features real-time audio playback, JWT-based user authentication, setlist management, song upload, and WebSocket + REST endpoints."
+          data-github="https://github.com/AnzilottiChristopher/AI-DJ">
+          <div class="card-thumb placeholder"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="tag tag-python">Python</span>
+              <span class="mono text-muted">2024</span>
+            </div>
+            <h3 class="card-title">AI DJ</h3>
+            <p class="card-desc">LLM-powered DJ backend with real-time audio playback and intelligent song transitions via Ollama.</p>
+          </div>
+        </article>
+
+        <!-- CSC-375-Final -->
+        <article class="project-card" tabindex="0"
+          data-category="ai"
+          data-title="Generative AI for Semiconductor Simulation"
+          data-date="2024"
+          data-desc="Final project for CSC 375 – Generative AI at Quinnipiac University. Explored small-scale language models (≤1B parameters) to generate SPICE-compatible semiconductor simulation code for Silvaco TCAD. Techniques included prompt engineering, supervised fine-tuning, and careful preprocessing. Built with Alex Power and Thomas Morrissey."
+          data-github="https://github.com/AnzilottiChristopher/CSC-375-Final">
+          <div class="card-thumb placeholder"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="tag tag-python">Python</span>
+              <span class="mono text-muted">2024</span>
+            </div>
+            <h3 class="card-title">GenAI Semiconductor Sim</h3>
+            <p class="card-desc">Fine-tuned LLMs (≤1B params) to generate SPICE semiconductor simulation code from natural language.</p>
+          </div>
+        </article>
+
+        <!-- ── Games ───────────────────────────────────────── -->
+
+        <!-- Egyptian RatScrew -->
+        <article class="project-card" tabindex="0"
+          data-category="games"
+          data-title="Egyptian RatScrew"
+          data-date="April 2023"
+          data-desc="A terminal-based card game built with Java Swing. My partner and I implemented real-time input handling for this reaction-based game, covering all game logic, event mechanics, and GUI."
+          data-images='["Img/EgyptianRatScrew.png","Img/EgyptianRatScrewCode.png","Img/ERSGui.png"]'
+          data-github="https://github.com/AnzilottiChristopher/SER_CardProject">
+          <div class="card-thumb">
+            <img src="Img/EgyptianRatScrew.png" alt="Egyptian RatScrew" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="tag tag-java">Java</span>
+              <span class="mono text-muted">April 2023</span>
+            </div>
+            <h3 class="card-title">Egyptian RatScrew</h3>
+            <p class="card-desc">Terminal card game using Java Swing with real-time input and full game logic.</p>
+          </div>
+        </article>
+
+        <!-- RPG Game -->
+        <article class="project-card" tabindex="0"
+          data-category="games"
+          data-title="RPG Game"
+          data-date="November 2023"
+          data-desc="A semester-long team project using Scrum and Agile. I integrated music, developed the entire storyline, coded barriers, and created cutscenes for key in-game events."
+          data-images='["Img/GameLoadScreen.png","Img/GameWorld.png","Img/GameBattle.png","Img/GameUpdate.png","Img/GameCodeMusic.png","Img/GameScript.png"]'
+          data-github="https://github.com/AnzilottiChristopher/SER225_Plasma">
+          <div class="card-thumb">
+            <img src="Img/GameLoadScreen.png" alt="RPG Game" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="tag tag-java">Java</span>
+              <span class="mono text-muted">November 2023</span>
+            </div>
+            <h3 class="card-title">RPG Game</h3>
+            <p class="card-desc">Refactored RPG with turn-based battles, music, cutscenes, and Agile teamwork.</p>
+          </div>
+        </article>
+
+        <!-- Flappy Bird -->
+        <article class="project-card" tabindex="0"
+          data-category="games"
+          data-title="Flappy Bird"
+          data-date="January 2023"
+          data-desc="My first Unity project — a Flappy Bird clone built to learn the fundamentals of Unity, C# scripting, 2D physics, and sprite animation."
+          data-images='["Img/FlappyBirdGame.jpg","Img/FlappyBirdcode.jpg"]'>
+          <div class="card-thumb">
+            <img src="Img/FlappyBirdGame.jpg" alt="Flappy Bird" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="tag tag-unity">Unity</span>
+              <span class="mono text-muted">January 2023</span>
+            </div>
+            <h3 class="card-title">Flappy Bird</h3>
+            <p class="card-desc">Unity clone built to learn C# scripting, 2D physics, and sprite animation.</p>
+          </div>
+        </article>
+
+        <!-- Metroidvania -->
+        <article class="project-card" tabindex="0"
+          data-category="games"
+          data-title="Metroidvania"
+          data-date="March 2023"
+          data-desc="A 2D Metroidvania-style platformer built in Unity. I designed and implemented character animations, environmental hazards, and multi-level progression."
+          data-images='["Img/MetroidvaniaGame.jpg","Img/MetroidvaniaCode.jpg","Img/MetroidvaniaCode2.jpg"]'>
+          <div class="card-thumb">
+            <img src="Img/MetroidvaniaGame.jpg" alt="Metroidvania" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="tag tag-unity">Unity</span>
+              <span class="mono text-muted">March 2023</span>
+            </div>
+            <h3 class="card-title">Metroidvania</h3>
+            <p class="card-desc">2D platformer with character animations, environmental design, and multi-level progression.</p>
+          </div>
+        </article>
+
+        <!-- Egyptian War (Unity) -->
+        <article class="project-card" tabindex="0"
+          data-category="games"
+          data-title="Egyptian War (Unity)"
+          data-date="November 2023"
+          data-desc="A Unity recreation of my Egyptian RatScrew card game — porting the original Java terminal game into a fully graphical Unity experience with animations and a polished UI."
+          data-images='["Img/UEgyptianWarGame.jpg","Img/UEgyptianWarGame2.jpg","Img/UEgyptianWarCode.jpg","Img/UEgyptianWarCode2.jpg"]'>
+          <div class="card-thumb">
+            <img src="Img/UEgyptianWarGame.jpg" alt="Egyptian War Unity" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="tag tag-unity">Unity</span>
+              <span class="mono text-muted">November 2023</span>
+            </div>
+            <h3 class="card-title">Egyptian War</h3>
+            <p class="card-desc">Unity port of the Java RatScrew game with full graphics, animations, and UI.</p>
+          </div>
+        </article>
+
+        <!-- Funny-Mustache-Game -->
+        <article class="project-card" tabindex="0"
+          data-category="games"
+          data-title="Funny Mustache Game"
+          data-date="2024"
+          data-desc="A multiplayer browser game built with JavaScript and Node.js. Features a client-server architecture with real-time communication via a dedicated game server."
+          data-github="https://github.com/AnzilottiChristopher/Funny-Mustache-Game">
+          <div class="card-thumb placeholder"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="tag tag-js">JavaScript</span>
+              <span class="mono text-muted">2024</span>
+            </div>
+            <h3 class="card-title">Funny Mustache Game</h3>
+            <p class="card-desc">Multiplayer browser game with a Node.js game server and real-time client-server architecture.</p>
+          </div>
+        </article>
+
+        <!-- ── Networking ───────────────────────────────────── -->
+
+        <!-- QU Hackathon -->
+        <article class="project-card" tabindex="0"
+          data-category="networking"
+          data-title="QU Hackathon — Accessibility Game"
+          data-date="Spring 2024"
+          data-desc="A cooperative multiplayer game built with TCP/UDP networking. One player is blind (audio cues only), the other is deaf (visuals only). I built the server and the communication system that lets both players interact. Won 2nd place."
+          data-images='["Img/DisabilityGame.png","Img/DisabilityGame2.png","Img/DisabilityCode.png"]'
+          data-github="https://github.com/PaulZ357/Spring2024Hackathon">
+          <div class="card-thumb">
+            <img src="Img/DisabilityGame.png" alt="Hackathon Accessibility Game" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="tag tag-java">Java</span>
+              <span class="mono text-muted">Spring 2024</span>
+            </div>
+            <h3 class="card-title">QU Hackathon</h3>
+            <p class="card-desc">2nd-place cooperative accessibility game with TCP/UDP networking for deaf &amp; blind players.</p>
+          </div>
+        </article>
+
+        <!-- Trivia Game -->
+        <article class="project-card" tabindex="0"
+          data-category="networking"
+          data-title="Multiplayer Trivia Game"
+          data-date="April 2024"
+          data-desc="A trivia game supporting any number of simultaneous players over TCP and UDP. I set up the server and communication system — players receive questions, get live point updates, and can buzz in."
+          data-images='["Img/TriviaGame.png","Img/TriviaCode.png","Img/Triviacode2.png","Img/TriviaCode3.png","Img/TriviaCode4.png"]'
+          data-github="https://github.com/AnzilottiChristopher/CSC_340_Project2">
+          <div class="card-thumb">
+            <img src="Img/TriviaGame.png" alt="Trivia Game" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="tag tag-java">Java</span>
+              <span class="mono text-muted">April 2024</span>
+            </div>
+            <h3 class="card-title">Multiplayer Trivia</h3>
+            <p class="card-desc">TCP/UDP trivia server supporting unlimited simultaneous players with live buzz-in.</p>
+          </div>
+        </article>
+
+        <!-- Port_Sniffer -->
+        <article class="project-card" tabindex="0"
+          data-category="networking"
+          data-title="Port Sniffer"
+          data-date="2024"
+          data-desc="A multithreaded TCP port scanner written in Rust. Scans all 65,535 ports using configurable worker threads (via -j flag), communicates results over an mpsc channel, and prints open ports sorted after the scan completes."
+          data-github="https://github.com/AnzilottiChristopher/Port_Sniffer">
+          <div class="card-thumb placeholder"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="tag tag-rust">Rust</span>
+              <span class="mono text-muted">2024</span>
+            </div>
+            <h3 class="card-title">Port Sniffer</h3>
+            <p class="card-desc">Multithreaded TCP port scanner in Rust — scans all 65,535 ports with configurable thread count.</p>
+          </div>
+        </article>
+
+        <!-- Desktop-Ping-Gift -->
+        <article class="project-card" tabindex="0"
+          data-category="networking"
+          data-title="Desktop Ping Gift"
+          data-date="2024"
+          data-desc="A Java desktop application for sending ping-based notifications between machines."
+          data-github="https://github.com/AnzilottiChristopher/Desktop-Ping-Gift">
+          <div class="card-thumb placeholder"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="tag tag-java">Java</span>
+              <span class="mono text-muted">2024</span>
+            </div>
+            <h3 class="card-title">Desktop Ping Gift</h3>
+            <p class="card-desc">Java desktop application for sending ping-based notifications between machines.</p>
+          </div>
+        </article>
+
+        <!-- ── Tools ────────────────────────────────────────── -->
+
+        <!-- Sea -->
+        <article class="project-card" tabindex="0"
+          data-category="tools"
+          data-title="Sea — C Static Analyzer"
+          data-date="2024"
+          data-desc="A static analysis tool for detecting memory safety violations in C code, inspired by Rust's borrow checker. Parses C source files, builds a Control Flow Graph, and performs ownership analysis. Detects double-free, use-after-free, null pointer dereference, memory leaks, and more across if/else, loops, and switch statements."
+          data-github="https://github.com/AnzilottiChristopher/Sea">
+          <div class="card-thumb placeholder"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="tag tag-rust">Rust</span>
+              <span class="mono text-muted">2024</span>
+            </div>
+            <h3 class="card-title">Sea</h3>
+            <p class="card-desc">Rust-based static analyzer that brings borrow-checker-like memory safety rules to C code.</p>
+          </div>
+        </article>
+
+        <!-- git_tui -->
+        <article class="project-card" tabindex="0"
+          data-category="tools"
+          data-title="git_tui"
+          data-date="2024"
+          data-desc="A terminal user interface (TUI) for GitHub built in Rust — combining repository browsing with a built-in todo list application for managing work directly from the terminal."
+          data-github="https://github.com/AnzilottiChristopher/git_tui">
+          <div class="card-thumb placeholder"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="tag tag-rust">Rust</span>
+              <span class="mono text-muted">2024</span>
+            </div>
+            <h3 class="card-title">git_tui</h3>
+            <p class="card-desc">Rust TUI for browsing GitHub repositories and managing a todo list from the terminal.</p>
+          </div>
+        </article>
+
+        <!-- axum-docker_tutorial -->
+        <article class="project-card" tabindex="0"
+          data-category="tools"
+          data-title="Axum + Docker"
+          data-date="2024"
+          data-desc="A learning project exploring the Axum web framework in Rust, containerized with Docker. Demonstrates building a production-ready Rust web server and packaging it into a Docker image."
+          data-github="https://github.com/AnzilottiChristopher/axum-docker_tutorial">
+          <div class="card-thumb placeholder"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="tag tag-rust">Rust</span>
+              <span class="mono text-muted">2024</span>
+            </div>
+            <h3 class="card-title">Axum + Docker</h3>
+            <p class="card-desc">Rust web server built with Axum and containerized with Docker as a learning project.</p>
+          </div>
+        </article>
+
+      </div><!-- /projects-grid -->
+    </div>
+  </section>
+
+  <!-- ── Skills & Resume ──────────────────────────────────────── -->
+  <section id="skills" class="section reveal">
+    <div class="container">
+      <h2 class="section-title"><span class="mono accent">03.</span> Skills &amp; Resume</h2>
+      <div class="skills-layout">
+
+        <div class="skills-groups">
+          <!-- Add or remove <span class="skill-tag"> elements to update skills -->
+
+          <div class="skill-group">
+            <h3 class="skill-label mono">Languages</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Rust</span>
+              <span class="skill-tag">C</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-label mono">Tools &amp; Engines</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Unity</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">Java Swing</span>
+              <span class="skill-tag">IntelliJ IDEA</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-label mono">Databases</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">MongoDB</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-label mono">Concepts</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Data Structures</span>
+              <span class="skill-tag">OOP</span>
+              <span class="skill-tag">Systems Programming</span>
+              <span class="skill-tag">Generative AI / LLMs</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">TCP/UDP Networking</span>
+              <span class="skill-tag">Multithreading</span>
+              <span class="skill-tag">Static Analysis</span>
+              <span class="skill-tag">Game Design</span>
+              <span class="skill-tag">Agile / Scrum</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-label mono">Soft Skills</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Leadership</span>
+              <span class="skill-tag">Technical Communication</span>
+              <span class="skill-tag">Problem Solving</span>
+              <span class="skill-tag">Critical Thinking</span>
+              <span class="skill-tag">Collaborative</span>
+              <span class="skill-tag">Organization</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="resume-panel">
+          <p class="mono text-muted">Want the full picture?</p>
+          <a href="Christopher_Anzilotti.pdf" class="btn btn-primary" target="_blank" rel="noopener">Download Resume</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer / Contact ─────────────────────────────────────── -->
+  <footer id="contact" class="footer">
+    <div class="container">
+      <p class="footer-name">Christopher Anzilotti</p>
+      <p class="mono text-muted footer-tagline">Computer Science &amp; Game Design</p>
+      <div class="footer-links">
+        <a href="https://github.com/AnzilottiChristopher" target="_blank" rel="noopener">GitHub</a>
+        <span class="footer-sep" aria-hidden="true">/</span>
+        <a href="https://www.linkedin.com/in/christopher-anzilotti-668abb294/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="footer-sep" aria-hidden="true">/</span>
+        <a href="mailto:anzilottichr@gmail.com">anzilottichr@gmail.com</a>
+      </div>
+      <p class="footer-copy mono text-muted">&copy; 2025 Christopher Anzilotti</p>
+    </div>
+  </footer>
+
+  <!-- ── Modal ────────────────────────────────────────────────── -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <div class="modal-img-section">
+        <button class="modal-arrow" id="modal-prev" aria-label="Previous image">&#8592;</button>
+        <img id="modal-img" src="" alt="" class="modal-img">
+        <button class="modal-arrow" id="modal-next" aria-label="Next image">&#8594;</button>
+      </div>
+      <div class="modal-info">
+        <div class="modal-meta">
+          <span id="modal-tag" class="tag"></span>
+          <span id="modal-date" class="mono text-muted"></span>
+        </div>
+        <h3 id="modal-title"></h3>
+        <p id="modal-desc"></p>
+        <a id="modal-github" href="#" target="_blank" rel="noopener" class="btn btn-outline">View on GitHub</a>
+      </div>
+      <div class="modal-footer">
+        <span id="modal-count" class="mono text-muted"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
 </body>
 </html>
