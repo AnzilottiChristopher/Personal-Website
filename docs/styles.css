@@ -487,7 +487,6 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .footer-links a:hover { color: var(--accent); }
 .footer-sep { color: var(--border); user-select: none; }
-.footer-copy { font-size: 0.78rem; }
 
 /* ── Modal ───────────────────────────────────────────────── */
 .modal {
